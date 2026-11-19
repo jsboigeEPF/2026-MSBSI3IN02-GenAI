@@ -88,7 +88,7 @@ Améliorer des images dégradées en contrôlant ce que le modèle invente : le 
 - **Extensions** : restauration par instruction en langage naturel, cas sans vérité terrain, interface comparative.
 - **Faisabilité** : modèles pré-entraînés locaux ou API image ; budget cible inférieur à 12 €. Plan B : corpus d'images dégradées pré-calculé.
 
-**CoursIA** : [Qwen Image Edit](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Image/01-Foundation/01-5-Qwen-Image-Edit.ipynb) · [Basic Image Operations](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Image/01-Foundation/01-3-Basic-Image-Operations.ipynb) · [Comparaison multi-modèles](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Image/03-Orchestration/03-1-Multi-Model-Comparison.ipynb)
+**CoursIA** : [Édition guidée par consigne](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Image/01-Foundation/01-5-Edition-Image-Prompt.ipynb) · [Basic Image Operations](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Image/01-Foundation/01-3-Basic-Image-Operations.ipynb) · [Comparaison multi-modèles](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Image/03-Orchestration/03-1-Multi-Model-Comparison.ipynb)
 
 **Références** : [Real-ESRGAN](https://arxiv.org/abs/2107.10833) · [SwinIR](https://arxiv.org/abs/2108.10257) · [LPIPS](https://arxiv.org/abs/1801.03924)
 

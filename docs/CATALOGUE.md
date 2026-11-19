@@ -1,6 +1,32 @@
-# Catalogue Bachelor — projets au choix
+# Catalogue Bachelor — 50 projets
 
-Choisissez un verrou technique plutôt qu’un secteur. Comparez deux méthodes sur les mêmes cas et gardez les exemples de test à part. Les nombres indiqués dans les fiches servent à dimensionner votre proposition.
+Choisissez une famille, puis comparez le résultat à démontrer et la manière de le mesurer. Les identifiants existants restent inchangés.
+
+## Index par catégorie
+
+**Texte, mémoire et dialogue**　[A2 : Mémoire persistante multi-sessions](#fiche-a2) · [A4 : Mémoire multimodale évaluable](#fiche-a4) · [A5 : Long contexte contre RAG sous ablation](#fiche-a5) · [A7 : Cohérence interne des documents longs](#fiche-a7) · [BSI-02 : Générer une question qui départage deux interprétations](#fiche-bsi-02)
+
+**Image, audio et vidéo**　[C5 : Restauration d'images sans invention](#fiche-c5) · [C6 : Images synthétiques pour l'entraînement](#fiche-c6) · [D3 : Séparation et restauration de sources audio](#fiche-d3) · [D4 : Synthèse vocale expressive et prosodie](#fiche-d4) · [D5 : Diarisation et transcription de réunion](#fiche-d5) · [D6 : Podcast sourcé de bout en bout](#fiche-d6) · [E5 : Montage automatique mesuré](#fiche-e5) · [BSI-01 : Un sous-titre doit aussi se lire à temps](#fiche-bsi-01)
+
+**Logiciels et services génératifs**　[B4 : Générateur auto-validant de notebooks](#fiche-b4) · [F3 : Application GenAI observable avec .NET Aspire](#fiche-f3) · [F4 : Routeur multi-fournisseurs avec failover](#fiche-f4) · [F5 : Assistant support avec escalade mesurée](#fiche-f5) · [G2 : Garde-fous Roslyn pour code généré](#fiche-g2) · [G3 : Pair-programming IA en étude contrôlée](#fiche-g3)
+
+**Évaluation, données et apprentissage**　[H4 : Provenance et détection de contenus synthétiques](#fiche-h4) · [H5 : Constitution IA et coût des refus](#fiche-h5) · [J2 : Analyste multimodal de données](#fiche-j2) · [J3 : Expériences reproductibles auto-validées](#fiche-j3) · [K1 : Confidentialité des données synthétiques](#fiche-k1) · [L3 : Tuteur adaptatif avec mesure d'apprentissage](#fiche-l3)
+
+**Adaptation et inférence**　[I1 : QLoRA sans contamination de l'évaluation](#fiche-i1) · [I2 : Inférence locale .NET face aux API cloud](#fiche-i2) · [I3 : Frontière coût-précision du test-time compute](#fiche-i3) · [I4 : Fusion et routage de modèles spécialisés](#fiche-i4)
+
+**Génération sous contraintes symboliques**　[M1 : Traduire une règle en contraintes de planning](#fiche-m1) · [M2 : Expliquer pourquoi un puzzle est impossible](#fiche-m2) · [M3 : Inventer des énigmes à solution unique](#fiche-m3) · [M4 : Transformer une procédure en machine à états](#fiche-m4) · [M5 : Produire un contre-exemple plutôt qu’un avis](#fiche-m5)
+
+**Mesures, causalité et raisonnement quantitatif**　[N1 : Conserver les unités dans un compte rendu](#fiche-n1) · [N2 : Générer un mode d’emploi qui respecte les dépendances](#fiche-n2) · [N3 : Faire réviser une conclusion après une intervention](#fiche-n3) · [N4 : Rédiger un bulletin qui respecte l’incertitude](#fiche-n4) · [N5 : Auditer les dénominateurs d’une synthèse](#fiche-n5)
+
+**Accessibilité et transmission du sens**　[O1 : Adapter un texte sans perdre ses exceptions](#fiche-o1) · [O2 : Restituer un tableau avec un lecteur d’écran](#fiche-o2) · [O3 : Choisir un texte alternatif selon la tâche](#fiche-o3) · [O4 : Écrire une consigne qui survit à la traduction](#fiche-o4)
+
+**Édition, maintenance et couverture**　[P1 : Publier uniquement les changements utiles](#fiche-p1) · [P2 : Fusionner deux corrections éditoriales](#fiche-p2) · [P3 : Générer un index de renvois qui reste valide](#fiche-p3) · [P4 : Construire des exemples qui couvrent une règle](#fiche-p4)
+
+**Jeux, récits et choix collectifs**　[Q1 : Créer un récit dont le lecteur choisit le chemin](#fiche-q1) · [Q2 : Faire deviner une notion sans la nommer](#fiche-q2) · [Q3 : Expliquer deux résultats de vote contradictoires](#fiche-q3)
+
+## Texte, mémoire et dialogue
+
+<a id="fiche-a2"></a>
 
 ### A2 — Mémoire persistante multi-sessions
 
@@ -17,6 +43,8 @@ Concevoir une mémoire explicite qui décide quoi conserver, retrouver, mettre �
 
 **Références** : [MemGPT](https://arxiv.org/abs/2310.08560) · [Qdrant — Payload](https://qdrant.tech/documentation/concepts/payload/) · [OWASP — LLM02 Insecure Output Handling](https://genai.owasp.org/llmrisk/llm02-insecure-output-handling/)
 
+<a id="fiche-a4"></a>
+
 ### A4 — Mémoire multimodale évaluable
 
 **Difficulté : 4/5** · Mots-clés : `multimodal`, `kernel-memory`, `retrieval`, `grounding`
@@ -31,6 +59,8 @@ Indexer un corpus mêlant texte et images, puis répondre à des questions dont 
 **CoursIA** : [Kernel Memory Multimodal](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/RAG-et-Memoire-Semantique/09-KernelMemory-Multimodal.ipynb) · [Kernel Memory In Process](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/RAG-et-Memoire-Semantique/06-KernelMemory-InProcess.ipynb) · [Semantic Kernel Multimodal](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/SemanticKernel/07-SemanticKernel-MultiModal.ipynb)
 
 **Références** : [Microsoft Kernel Memory](https://github.com/microsoft/kernel-memory) · [CLIP](https://arxiv.org/abs/2103.00020) · [Qdrant — Multivectors](https://qdrant.tech/documentation/concepts/vectors/#multivectors)
+
+<a id="fiche-a5"></a>
 
 ### A5 — Long contexte contre RAG sous ablation
 
@@ -47,6 +77,8 @@ Comparer sur un même corpus l'injection du document complet, un RAG simple et u
 
 **Références** : [Lost in the Middle](https://arxiv.org/abs/2307.03172) · [RAG](https://arxiv.org/abs/2005.11401) · [LongBench](https://arxiv.org/abs/2308.14508)
 
+<a id="fiche-a7"></a>
+
 ### A7 — Cohérence interne des documents longs
 
 **Difficulté : 4/5** · Mots-clés : `consistency`, `nli`, `long-context`, `detection`
@@ -62,20 +94,20 @@ Construire un détecteur d'incohérences pour des documents générés de plusie
 
 **Références** : [SummaC](https://arxiv.org/abs/2111.09525) · [AlignScore](https://arxiv.org/abs/2305.16739) · [LongBench](https://arxiv.org/abs/2308.14508)
 
-### B4 — Générateur auto-validant de notebooks
+<a id="fiche-bsi-02"></a>
 
-**Difficulté : 4/5** · Mots-clés : `notebooks`, `generation`, `execution`, `validation`
+### BSI-02 — Générer une question qui départage deux interprétations
 
-Générer un notebook pédagogique à partir d'un cahier des charges, l'exécuter automatiquement, diagnostiquer ses erreurs puis produire un rapport de conformité. Le succès est l'exécution reproductible, pas la beauté d'un exemple.
+**Difficulté : 3/5 · dialogue, clarification, décision.** Au lieu de répondre à une demande ambiguë, choisir la question qui élimine le plus de solutions possibles. Ce projet mesure la valeur de la question, pas l’éloquence de la réponse.
 
-- **MVP** : gabarit, génération, exécution isolée, deux boucles de correction maximum et rapport.
-- **Réussite** : dix cahiers des charges ; taux d'exécution, conformité structurelle, corrections et coût.
-- **Extensions** : plusieurs kernels, rubric pédagogique, sandbox renforcée.
-- **Faisabilité** : Jupyter + Semantic Kernel ; exécution limitée et sans accès aux secrets ; budget cible inférieur à 8 €. Plan B : exercices Python sans réseau.
+- **MVP** : créer 24 demandes fictives de réservation et une table de salles avec contraintes. Comparer une question fixe, une question proposée par modèle et un oracle qui connaît toutes les partitions possibles.
+- **Réussite** : compter choix corrects après un échange, demandes qu’on pouvait résoudre sans question et questions inutiles. Conserver huit demandes pour le test final. Comparer aussi au hasard.
+- **Extension** : intégrer le coût d’un second échange. **Plan B** : rejouer les propositions générées, versionnées en JSON, et évaluer localement.
+- **CoursIA** : [consignes](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/02_PromptEngineering.ipynb), [appels de fonctions](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/04_Function_Calling.ipynb). **Références** : [Qulac](https://arxiv.org/abs/1907.06554), [JSON Schema](https://json-schema.org/), [information mutuelle](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.mutual_info_score.html).
 
-**CoursIA** : [NotebookMaker](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/SemanticKernel/10-SemanticKernel-NotebookMaker.ipynb) · [NotebookMaker batch paramétré](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/SemanticKernel/10b-SemanticKernel-NotebookMaker-batch-parameterized.ipynb) · [Code Interpreter](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/07_Code_Interpreter.ipynb)
+## Image, audio et vidéo
 
-**Références** : [Jupyter nbclient](https://nbclient.readthedocs.io/) · [nbformat](https://nbformat.readthedocs.io/) · [OWASP — Insecure Output Handling](https://genai.owasp.org/llmrisk/llm052025-improper-output-handling/)
+<a id="fiche-c5"></a>
 
 ### C5 — Restauration d'images sans invention
 
@@ -92,6 +124,8 @@ Améliorer des images dégradées en contrôlant ce que le modèle invente : le 
 
 **Références** : [Real-ESRGAN](https://arxiv.org/abs/2107.10833) · [SwinIR](https://arxiv.org/abs/2108.10257) · [LPIPS](https://arxiv.org/abs/1801.03924)
 
+<a id="fiche-c6"></a>
+
 ### C6 — Images synthétiques pour l'entraînement
 
 **Difficulté : 4/5** · Mots-clés : `synthetic-data`, `vision`, `augmentation`, `ablation`
@@ -106,6 +140,8 @@ Générer des images d'entraînement synthétiques pour une tâche de vision pau
 **CoursIA** : [FLUX Advanced Generation](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Image/02-Advanced/02-2-FLUX-1-Advanced-Generation.ipynb) · [Workflow Orchestration](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Image/03-Orchestration/03-2-Workflow-Orchestration.ipynb) · [Comparaison multi-modèles](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Image/03-Orchestration/03-1-Multi-Model-Comparison.ipynb)
 
 **Références** : [Domain Randomization](https://arxiv.org/abs/1703.06907) · [DatasetDM](https://arxiv.org/abs/2308.06160) · [Latent Diffusion](https://arxiv.org/abs/2112.10752)
+
+<a id="fiche-d3"></a>
 
 ### D3 — Séparation et restauration de sources audio
 
@@ -122,6 +158,8 @@ Séparer voix, musique et bruit puis restaurer la composante utile sans introdui
 
 **Références** : [Demucs](https://github.com/facebookresearch/demucs) · [MUSDB18](https://sigsep.github.io/datasets/musdb.html) · [BSS Eval](https://arxiv.org/abs/1811.02508)
 
+<a id="fiche-d4"></a>
+
 ### D4 — Synthèse vocale expressive et prosodie
 
 **Difficulté : 3/5** · Mots-clés : `tts`, `prosody`, `emotion`, `evaluation`
@@ -136,6 +174,8 @@ Contrôler rythme, pauses, accentuation et émotion d'une voix synthétique sur 
 **CoursIA** : [Expressive TTS](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Audio/02-Advanced/02-8-Expressive-TTS.ipynb) · [TTS Voice Benchmark](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Audio/04-Applications/04-Voix/04-7-TTS-Voice-Benchmark.ipynb)
 
 **Références** : [SSML](https://www.w3.org/TR/speech-synthesis11/) · [P.808](https://www.itu.int/rec/P-REC-P.808) · [Kokoro](https://github.com/hexgrad/kokoro)
+
+<a id="fiche-d5"></a>
 
 ### D5 — Diarisation et transcription de réunion
 
@@ -152,6 +192,8 @@ Transcrire une réunion en séparant qui a dit quoi : le projet mesure à la foi
 
 **Références** : [Whisper](https://arxiv.org/abs/2212.04356) · [pyannote.audio](https://github.com/pyannote/pyannote-audio) · [AMI Meeting Corpus](https://groups.inf.ed.ac.uk/ami/)
 
+<a id="fiche-d6"></a>
+
 ### D6 — Podcast sourcé de bout en bout
 
 **Difficulté : 3/5** · Mots-clés : `podcast`, `pipeline`, `grounding`, `tts`
@@ -166,6 +208,8 @@ Produire automatiquement un épisode de podcast parlé à partir d'un sujet et d
 **CoursIA** : [Audiobook Pipeline](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Audio/04-Applications/04-Audiobook/04-6-Audiobook-Pipeline.ipynb) · [PDF Web Search](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/06_PDF_Web_Search.ipynb) · [Expressive TTS](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Audio/02-Advanced/02-8-Expressive-TTS.ipynb)
 
 **Références** : [QAGS](https://arxiv.org/abs/2004.04228) · [P.808](https://www.itu.int/rec/P-REC-P.808) · [SSML](https://www.w3.org/TR/speech-synthesis11/)
+
+<a id="fiche-e5"></a>
 
 ### E5 — Montage automatique mesuré
 
@@ -182,6 +226,38 @@ Monter automatiquement des rushes bruts en séquence regardable : sélection des
 
 **Références** : [FFmpeg](https://ffmpeg.org/documentation.html) · [PySceneDetect](https://www.scenedetect.com/) · [P.1203](https://www.itu.int/rec/T-REC-P.1203)
 
+<a id="fiche-bsi-01"></a>
+
+### BSI-01 — Un sous-titre doit aussi se lire à temps
+
+**Difficulté : 3/5 · audio, segmentation, accessibilité.** À transcription fixée, comment découper la phrase et sélectionner une reformulation assez courte pour rester lisible sans perdre une négation ? Il ne s’agit pas de reconnaître qui parle.
+
+- **MVP** : enregistrer dix phrases fictives, fixer la transcription de référence, comparer découpage à longueur fixe et reformulation contrainte ; exporter en WebVTT.
+- **Réussite** : mesurer proportion de segments dépassant le seuil de caractères/seconde choisi, noms et négations préservés, chevauchements temporels. Faire noter en aveugle cinq paires ; rendre un contre-exemple.
+- **Extension** : tester débit lent et rapide sur la même phrase. **Plan B** : employer des transcriptions et horodatages préparés, sans GPU.
+- **CoursIA** : [Whisper local](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Audio/01-Foundation/01-4-Whisper-Local.ipynb), [sorties structurées](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/03_Structured_Outputs.ipynb). **Références** : [WebVTT](https://www.w3.org/TR/webvtt1/), [WAI : captions](https://www.w3.org/WAI/media/av/captions/), [Whisper](https://arxiv.org/abs/2212.04356).
+
+## Logiciels et services génératifs
+
+<a id="fiche-b4"></a>
+
+### B4 — Générateur auto-validant de notebooks
+
+**Difficulté : 4/5** · Mots-clés : `notebooks`, `generation`, `execution`, `validation`
+
+Générer un notebook pédagogique à partir d'un cahier des charges, l'exécuter automatiquement, diagnostiquer ses erreurs puis produire un rapport de conformité. Le succès est l'exécution reproductible, pas la beauté d'un exemple.
+
+- **MVP** : gabarit, génération, exécution isolée, deux boucles de correction maximum et rapport.
+- **Réussite** : dix cahiers des charges ; taux d'exécution, conformité structurelle, corrections et coût.
+- **Extensions** : plusieurs kernels, rubric pédagogique, sandbox renforcée.
+- **Faisabilité** : Jupyter + Semantic Kernel ; exécution limitée et sans accès aux secrets ; budget cible inférieur à 8 €. Plan B : exercices Python sans réseau.
+
+**CoursIA** : [NotebookMaker](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/SemanticKernel/10-SemanticKernel-NotebookMaker.ipynb) · [NotebookMaker batch paramétré](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/SemanticKernel/10b-SemanticKernel-NotebookMaker-batch-parameterized.ipynb) · [Code Interpreter](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/07_Code_Interpreter.ipynb)
+
+**Références** : [Jupyter nbclient](https://nbclient.readthedocs.io/) · [nbformat](https://nbformat.readthedocs.io/) · [OWASP — Insecure Output Handling](https://genai.owasp.org/llmrisk/llm052025-improper-output-handling/)
+
+<a id="fiche-f3"></a>
+
 ### F3 — Application GenAI observable avec .NET Aspire
 
 **Difficulté : 4/5** · Mots-clés : `aspire`, `observability`, `streaming`, `integration-tests`
@@ -196,6 +272,8 @@ Construire une petite application GenAI distribuée dont les appels modèle, out
 **CoursIA** : [Aspire Observabilité](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Integrations-DotNet/Aspire/03-Aspire-Observabilite.ipynb) · [Aspire Streaming Agent](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Integrations-DotNet/Aspire/04-Aspire-Streaming-Agent.ipynb) · [Aspire Tests Integration](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Integrations-DotNet/Aspire/05-Aspire-Tests-Integration.ipynb)
 
 **Références** : [.NET Aspire](https://learn.microsoft.com/en-us/dotnet/aspire/) · [OpenTelemetry .NET](https://opentelemetry.io/docs/languages/net/) · [Polly](https://www.pollydocs.org/)
+
+<a id="fiche-f4"></a>
 
 ### F4 — Routeur multi-fournisseurs avec failover
 
@@ -212,6 +290,8 @@ Router chaque requête vers un modèle selon ses capacités, son coût et son é
 
 **Références** : [Azure Architecture — Circuit Breaker](https://learn.microsoft.com/en-us/azure/architecture/patterns/circuit-breaker) · [OpenTelemetry](https://opentelemetry.io/docs/) · [Polly](https://www.pollydocs.org/)
 
+<a id="fiche-f5"></a>
+
 ### F5 — Assistant support avec escalade mesurée
 
 **Difficulté : 3/5** · Mots-clés : `support`, `routing`, `escalation`, `oos-detection`
@@ -226,6 +306,8 @@ Construire un assistant de support qui répond aux questions couvertes et escala
 **CoursIA** : [Mesurer la dérive d'un Copilot](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Plateformes-Conversationnelles/AI-Engine-WordPress/03-Functional/03-1-Chatbots/mesurer-la-derive-dun-copilot.ipynb) · [Production Patterns](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/09_Production_Patterns.ipynb) · [Structured Outputs](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/03_Structured_Outputs.ipynb)
 
 **Références** : [Banking77](https://huggingface.co/datasets/banking77) · [Rasa — Dialogue Management](https://rasa.com/docs/rasa/dialogue-management/) · [Bot Framework — Human Handoff](https://learn.microsoft.com/en-us/azure/bot-service/bot-builder-handoff-human?view=azure-bot-service-4.0)
+
+<a id="fiche-g2"></a>
 
 ### G2 — Garde-fous Roslyn pour code généré
 
@@ -242,6 +324,8 @@ Créer des analyseurs Roslyn qui interdisent des motifs dangereux ou non conform
 
 **Références** : [Roslyn analyzers](https://learn.microsoft.com/en-us/dotnet/csharp/roslyn-sdk/tutorials/how-to-write-csharp-analyzer-code-fix) · [Microsoft.CodeAnalysis.Testing](https://www.nuget.org/packages/Microsoft.CodeAnalysis.Analyzer.Testing/) · [CWE Top 25](https://cwe.mitre.org/top25/)
 
+<a id="fiche-g3"></a>
+
 ### G3 — Pair-programming IA en étude contrôlée
 
 **Difficulté : 3/5** · Mots-clés : `pair-programming`, `experiment`, `productivity`, `quality`
@@ -256,6 +340,10 @@ Mesurer l'effet d'un assistant de code sur des tâches comparables, avec et sans
 **CoursIA** : [Claude CLI Bases](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Vibe-Coding/Claude-Code/notebooks/01-Claude-CLI-Bases.ipynb) · [Claude CLI Sessions](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Vibe-Coding/Claude-Code/notebooks/02-Claude-CLI-Sessions.ipynb)
 
 **Références** : [METR — Early-2025 AI Coding Study](https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/) · [SWE-bench](https://www.swebench.com/) · [SPACE framework](https://queue.acm.org/detail.cfm?id=3454124)
+
+## Évaluation, données et apprentissage
+
+<a id="fiche-h4"></a>
 
 ### H4 — Provenance et détection de contenus synthétiques
 
@@ -272,6 +360,8 @@ Comparer métadonnées de provenance, watermarking et classifieurs sur des conte
 
 **Références** : [C2PA Specification](https://c2pa.org/specifications/specifications/2.2/specs/C2PA_Specification.html) · [SynthID](https://deepmind.google/technologies/synthid/) · [NIST GenAI Profile](https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence)
 
+<a id="fiche-h5"></a>
+
 ### H5 — Constitution IA et coût des refus
 
 **Difficulté : 3/5** · Mots-clés : `constitutional-ai`, `guardrails`, `refusal`, `evaluation`
@@ -287,65 +377,7 @@ Définir une politique de réponse, l'appliquer par prompt ou filtre puis mesure
 
 **Références** : [Constitutional AI](https://arxiv.org/abs/2212.08073) · [NIST AI RMF](https://www.nist.gov/itl/ai-risk-management-framework) · [OWASP GenAI](https://genai.owasp.org/)
 
-### I1 — QLoRA sans contamination de l'évaluation
-
-**Difficulté : 4/5** · Mots-clés : `qlora`, `fine-tuning`, `data-leakage`, `evaluation`
-
-Adapter un petit modèle à une tâche structurée et prouver que le gain ne vient ni d'une fuite train/test ni d'une mauvaise baseline. Les domaines de biais, recrutement, extraction documentaire et fallacies sont exclus.
-
-- **MVP** : dataset versionné, contrôles de doublons, baseline prompt-only, QLoRA et test tenu à l'écart.
-- **Réussite** : métrique adaptée, intervalles de confiance, coût mémoire/temps et analyse d'erreurs.
-- **Extensions** : comparaison RAG, quantification, autre taille de modèle.
-- **Faisabilité** : Colab ou GPU partagé, petit modèle uniquement ; budget cible inférieur à 10 € ; aucun GPU requis pour la démo si l'adapter est sauvegardé. Plan B : entraînement très réduit.
-
-**CoursIA** : [QLoRA Quantization](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/FineTuning/FT-02-QLoRA-Quantization-Python.ipynb) · [Supervised Fine-Tuning](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/FineTuning/FT-03-Supervised-FineTuning-SFT-Python.ipynb) · [LoRA Fine-Tuning](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/21_LoRA_FineTuning.ipynb)
-
-**Références** : [QLoRA](https://arxiv.org/abs/2305.14314) · [PEFT](https://huggingface.co/docs/peft/) · [Data Contamination in LLMs](https://arxiv.org/abs/2311.04850)
-
-### I2 — Inférence locale .NET face aux API cloud
-
-**Difficulté : 3/5** · Mots-clés : `dotnet`, `local-inference`, `quantization`, `benchmark`
-
-Comparer LLamaSharp, ONNX Runtime GenAI ou TensorSharp à une API cloud sur une tâche contrôlée. Construire une frontière coût–latence–qualité plutôt qu'un simple serveur local.
-
-- **MVP** : deux moteurs locaux ou un local/un cloud, même jeu de 50 requêtes, instrumentation mémoire et tokens.
-- **Réussite** : p50/p95, débit, mémoire, qualité, coût projeté et protocole reproductible.
-- **Extensions** : quantifications multiples, batching, streaming.
-- **Faisabilité** : modèles compacts ; CPU accepté ; budget cloud de comparaison inférieur à 8 €. Plan B : GGUF très quantifié et sous-échantillon.
-
-**CoursIA** : [Inference Mechanics](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/10b_Inference_Mechanics.ipynb) · [Bake-off .NET TensorSharp / ORT GenAI](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/10d_TensorSharp_DotNet_Inference.ipynb) · [Quantization](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/11_Quantization.ipynb)
-
-**Références** : [LLamaSharp](https://github.com/SciSharp/LLamaSharp) · [ONNX Runtime GenAI](https://onnxruntime.ai/docs/genai/) · [llama.cpp](https://github.com/ggml-org/llama.cpp)
-
-### I3 — Frontière coût-précision du test-time compute
-
-**Difficulté : 4/5** · Mots-clés : `reasoning`, `test-time-compute`, `tree-of-thoughts`, `scaling`
-
-Étudier combien de calcul à l'inférence améliore réellement une tâche vérifiable : échantillonnage multiple, vote, Tree of Thoughts et modèle à raisonnement natif.
-
-- **MVP** : deux jeux de problèmes, quatre budgets de calcul, trois stratégies et vérificateur automatique.
-- **Réussite** : courbes accuracy/coût/latence, analyse par difficulté et point de rendement décroissant.
-- **Extensions** : sélection adaptative du budget, self-consistency pondérée.
-- **Faisabilité** : très consommateur de tokens ; budget dur de 20 € et petites séries pilotes. Plan B : modèle local ou résultats mis en cache.
-
-**CoursIA** : [Tree of Thoughts](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/15_Tree_of_Thoughts_Search.ipynb) · [Scaling Test-Time Compute](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/16_Scaling_Test_Time_Compute.ipynb) · [Native Reasoning vs Scaling](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/17_Native_Reasoning_vs_Scaling.ipynb)
-
-**Références** : [Tree of Thoughts](https://arxiv.org/abs/2305.10601) · [Self-Consistency](https://arxiv.org/abs/2203.11171) · [Scaling LLM Test-Time Compute](https://arxiv.org/abs/2408.03314)
-
-### I4 — Fusion et routage de modèles spécialisés
-
-**Difficulté : 5/5** · Mots-clés : `model-merging`, `routing`, `specialization`, `benchmark`
-
-Combiner ou router de petits modèles spécialisés sans perdre leurs compétences propres. Le verrou technique est de démontrer un gain sur un holdout multi-domaines plutôt que sur les données d'adaptation.
-
-- **MVP** : deux spécialistes, une baseline générale, fusion ou routeur et jeu de test tenu à l'écart.
-- **Réussite** : qualité par domaine, oubli, mémoire, latence et coût comparés aux spécialistes isolés.
-- **Extensions** : plusieurs méthodes de fusion, routeur appris, quantification.
-- **Faisabilité** : petits modèles et adapters ; GPU partagé recommandé. Plan B : fusion d'adapters pré-entraînés.
-
-**CoursIA** : [Model Merging Routing](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/FineTuning/FT-05-ModelMerging-Routing-Python.ipynb) · [QLoRA Quantization](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/FineTuning/FT-02-QLoRA-Quantization-Python.ipynb)
-
-**Références** : [MergeKit](https://github.com/arcee-ai/mergekit) · [TIES-Merging](https://arxiv.org/abs/2306.01708) · [PEFT](https://huggingface.co/docs/peft/)
+<a id="fiche-j2"></a>
 
 ### J2 — Analyste multimodal de données
 
@@ -362,6 +394,8 @@ Répondre à des questions sur tableaux et graphiques en produisant calculs, vis
 
 **Références** : [Pandas](https://pandas.pydata.org/docs/) · [Vega-Lite](https://vega.github.io/vega-lite/) · [ChartQA](https://arxiv.org/abs/2203.10244)
 
+<a id="fiche-j3"></a>
+
 ### J3 — Expériences reproductibles auto-validées
 
 **Difficulté : 4/5** · Mots-clés : `experiments`, `reproducibility`, `code-generation`, `validation`
@@ -376,6 +410,8 @@ Transformer une hypothèse et un protocole structuré en expérience exécutable
 **CoursIA** : [NotebookMaker](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/SemanticKernel/10-SemanticKernel-NotebookMaker.ipynb) · [Evaluating Generated Text](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/22_Evaluating_Generated_Text.ipynb)
 
 **Références** : [ACM Artifact Review and Badging](https://www.acm.org/publications/policies/artifact-review-and-badging-current) · [SciPy](https://docs.scipy.org/doc/scipy/) · [Jupyter Reproducible Research](https://jupyter.org/)
+
+<a id="fiche-k1"></a>
 
 ### K1 — Confidentialité des données synthétiques
 
@@ -392,6 +428,8 @@ Générer des données tabulaires synthétiques et mesurer simultanément utilit
 
 **Références** : [NIST Privacy Framework](https://www.nist.gov/privacy-framework) · [Membership Inference Attacks](https://arxiv.org/abs/1610.05820) · [SDMetrics](https://docs.sdv.dev/sdmetrics/)
 
+<a id="fiche-l3"></a>
+
 ### L3 — Tuteur adaptatif avec mesure d'apprentissage
 
 **Difficulté : 4/5** · Mots-clés : `education`, `tutoring`, `adaptation`, `learning-gain`
@@ -407,20 +445,313 @@ Adapter explications et exercices à un modèle explicite de maîtrise, sans se 
 
 **Références** : [Knowledge Tracing](https://dl.acm.org/doi/10.5555/1161135.1161179) · [UNESCO guidance for generative AI in education](https://unesdoc.unesco.org/ark:/48223/pf0000386693) · [Bloom's taxonomy](https://cft.vanderbilt.edu/guides-sub-pages/blooms-taxonomy/)
 
-### BSI-01 — Un sous-titre doit aussi se lire à temps
+## Adaptation et inférence
 
-**Difficulté : 3/5 · audio, segmentation, accessibilité.** À transcription fixée, comment découper la phrase et sélectionner une reformulation assez courte pour rester lisible sans perdre une négation ? Il ne s’agit pas de reconnaître qui parle.
+<a id="fiche-i1"></a>
 
-- **MVP** : enregistrer dix phrases fictives, fixer la transcription de référence, comparer découpage à longueur fixe et reformulation contrainte ; exporter en WebVTT.
-- **Réussite** : mesurer proportion de segments dépassant le seuil de caractères/seconde choisi, noms et négations préservés, chevauchements temporels. Faire noter en aveugle cinq paires ; rendre un contre-exemple.
-- **Extension** : tester débit lent et rapide sur la même phrase. **Plan B** : employer des transcriptions et horodatages préparés, sans GPU.
-- **CoursIA** : [Whisper local](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Audio/01-Foundation/01-4-Whisper-Local.ipynb), [sorties structurées](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/03_Structured_Outputs.ipynb). **Références** : [WebVTT](https://www.w3.org/TR/webvtt1/), [WAI : captions](https://www.w3.org/WAI/media/av/captions/), [Whisper](https://arxiv.org/abs/2212.04356).
+### I1 — QLoRA sans contamination de l'évaluation
 
-### BSI-02 — Générer une question qui départage deux interprétations
+**Difficulté : 4/5** · Mots-clés : `qlora`, `fine-tuning`, `data-leakage`, `evaluation`
 
-**Difficulté : 3/5 · dialogue, clarification, décision.** Au lieu de répondre à une demande ambiguë, choisir la question qui élimine le plus de solutions possibles. Ce projet mesure la valeur de la question, pas l’éloquence de la réponse.
+Adapter un petit modèle à une tâche structurée et prouver que le gain ne vient ni d'une fuite train/test ni d'une mauvaise baseline. Les domaines de biais, recrutement, extraction documentaire et fallacies sont exclus.
 
-- **MVP** : créer 24 demandes fictives de réservation et une table de salles avec contraintes. Comparer une question fixe, une question proposée par modèle et un oracle qui connaît toutes les partitions possibles.
-- **Réussite** : compter choix corrects après un échange, demandes qu’on pouvait résoudre sans question et questions inutiles. Conserver huit demandes pour le test final. Comparer aussi au hasard.
-- **Extension** : intégrer le coût d’un second échange. **Plan B** : rejouer les propositions générées, versionnées en JSON, et évaluer localement.
-- **CoursIA** : [consignes](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/02_PromptEngineering.ipynb), [appels de fonctions](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/04_Function_Calling.ipynb). **Références** : [Qulac](https://arxiv.org/abs/1907.06554), [JSON Schema](https://json-schema.org/), [information mutuelle](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.mutual_info_score.html).
+- **MVP** : dataset versionné, contrôles de doublons, baseline prompt-only, QLoRA et test tenu à l'écart.
+- **Réussite** : métrique adaptée, intervalles de confiance, coût mémoire/temps et analyse d'erreurs.
+- **Extensions** : comparaison RAG, quantification, autre taille de modèle.
+- **Faisabilité** : Colab ou GPU partagé, petit modèle uniquement ; budget cible inférieur à 10 € ; aucun GPU requis pour la démo si l'adapter est sauvegardé. Plan B : entraînement très réduit.
+
+**CoursIA** : [QLoRA Quantization](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/FineTuning/FT-02-QLoRA-Quantization-Python.ipynb) · [Supervised Fine-Tuning](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/FineTuning/FT-03-Supervised-FineTuning-SFT-Python.ipynb) · [LoRA Fine-Tuning](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/21_LoRA_FineTuning.ipynb)
+
+**Références** : [QLoRA](https://arxiv.org/abs/2305.14314) · [PEFT](https://huggingface.co/docs/peft/) · [Data Contamination in LLMs](https://arxiv.org/abs/2311.04850)
+
+<a id="fiche-i2"></a>
+
+### I2 — Inférence locale .NET face aux API cloud
+
+**Difficulté : 3/5** · Mots-clés : `dotnet`, `local-inference`, `quantization`, `benchmark`
+
+Comparer LLamaSharp, ONNX Runtime GenAI ou TensorSharp à une API cloud sur une tâche contrôlée. Construire une frontière coût–latence–qualité plutôt qu'un simple serveur local.
+
+- **MVP** : deux moteurs locaux ou un local/un cloud, même jeu de 50 requêtes, instrumentation mémoire et tokens.
+- **Réussite** : p50/p95, débit, mémoire, qualité, coût projeté et protocole reproductible.
+- **Extensions** : quantifications multiples, batching, streaming.
+- **Faisabilité** : modèles compacts ; CPU accepté ; budget cloud de comparaison inférieur à 8 €. Plan B : GGUF très quantifié et sous-échantillon.
+
+**CoursIA** : [Inference Mechanics](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/10b_Inference_Mechanics.ipynb) · [Bake-off .NET TensorSharp / ORT GenAI](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/10d_TensorSharp_DotNet_Inference.ipynb) · [Quantization](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/11_Quantization.ipynb)
+
+**Références** : [LLamaSharp](https://github.com/SciSharp/LLamaSharp) · [ONNX Runtime GenAI](https://onnxruntime.ai/docs/genai/) · [llama.cpp](https://github.com/ggml-org/llama.cpp)
+
+<a id="fiche-i3"></a>
+
+### I3 — Frontière coût-précision du test-time compute
+
+**Difficulté : 4/5** · Mots-clés : `reasoning`, `test-time-compute`, `tree-of-thoughts`, `scaling`
+
+Étudier combien de calcul à l'inférence améliore réellement une tâche vérifiable : échantillonnage multiple, vote, Tree of Thoughts et modèle à raisonnement natif.
+
+- **MVP** : deux jeux de problèmes, quatre budgets de calcul, trois stratégies et vérificateur automatique.
+- **Réussite** : courbes accuracy/coût/latence, analyse par difficulté et point de rendement décroissant.
+- **Extensions** : sélection adaptative du budget, self-consistency pondérée.
+- **Faisabilité** : très consommateur de tokens ; budget dur de 20 € et petites séries pilotes. Plan B : modèle local ou résultats mis en cache.
+
+**CoursIA** : [Tree of Thoughts](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/15_Tree_of_Thoughts_Search.ipynb) · [Scaling Test-Time Compute](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/16_Scaling_Test_Time_Compute.ipynb) · [Native Reasoning vs Scaling](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/17_Native_Reasoning_vs_Scaling.ipynb)
+
+**Références** : [Tree of Thoughts](https://arxiv.org/abs/2305.10601) · [Self-Consistency](https://arxiv.org/abs/2203.11171) · [Scaling LLM Test-Time Compute](https://arxiv.org/abs/2408.03314)
+
+<a id="fiche-i4"></a>
+
+### I4 — Fusion et routage de modèles spécialisés
+
+**Difficulté : 5/5** · Mots-clés : `model-merging`, `routing`, `specialization`, `benchmark`
+
+Combiner ou router de petits modèles spécialisés sans perdre leurs compétences propres. Le verrou technique est de démontrer un gain sur un holdout multi-domaines plutôt que sur les données d'adaptation.
+
+- **MVP** : deux spécialistes, une baseline générale, fusion ou routeur et jeu de test tenu à l'écart.
+- **Réussite** : qualité par domaine, oubli, mémoire, latence et coût comparés aux spécialistes isolés.
+- **Extensions** : plusieurs méthodes de fusion, routeur appris, quantification.
+- **Faisabilité** : petits modèles et adapters ; GPU partagé recommandé. Plan B : fusion d'adapters pré-entraînés.
+
+**CoursIA** : [Model Merging Routing](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/FineTuning/FT-05-ModelMerging-Routing-Python.ipynb) · [QLoRA Quantization](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/FineTuning/FT-02-QLoRA-Quantization-Python.ipynb)
+
+**Références** : [MergeKit](https://github.com/arcee-ai/mergekit) · [TIES-Merging](https://arxiv.org/abs/2306.01708) · [PEFT](https://huggingface.co/docs/peft/)
+
+## Génération sous contraintes symboliques
+
+<a id="fiche-m1"></a>
+
+### M1 — Traduire une règle en contraintes de planning
+
+**Difficulté : 3/5**
+
+- **MVP et comparaison** : Transformer douze règlements fictifs en contraintes sur six créneaux. Comparer le texte libre à une grammaire limitée puis à un solveur exhaustif.
+- **Protocole de réussite** : Compter les violations sur des plannings jamais vus et les problèmes déclarés possibles à tort.
+- **Plan B sans API** : constituer un lot de sorties figées et le livrer avec les entrées et le vérificateur local ; distinguer les résultats rejoués des nouvelles générations.
+- **CoursIA** : [Structured Outputs](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/03_Structured_Outputs.ipynb) · [Function Calling](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/04_Function_Calling.ipynb).
+
+<a id="fiche-m2"></a>
+
+### M2 — Expliquer pourquoi un puzzle est impossible
+
+**Difficulté : 4/5**
+
+- **MVP et comparaison** : À partir de carrés latins contradictoires, faire proposer une explication en français puis vérifier que le sous-ensemble de contraintes cité suffit à l’incohérence.
+- **Protocole de réussite** : Comparer à la liste complète : taux de certificats valides et taille médiane de l’explication.
+- **Plan B sans API** : constituer un lot de sorties figées et le livrer avec les entrées et le vérificateur local ; distinguer les résultats rejoués des nouvelles générations.
+- **CoursIA** : [PromptEngineering](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/02_PromptEngineering.ipynb) · [Structured Outputs](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/03_Structured_Outputs.ipynb).
+
+<a id="fiche-m3"></a>
+
+### M3 — Inventer des énigmes à solution unique
+
+**Difficulté : 3/5**
+
+- **MVP et comparaison** : Générer des indices pour un jeu de déduction à quatre personnages ; un énumérateur indépendant compte les solutions. Comparer génération directe et révision après comptage.
+- **Protocole de réussite** : Sur trente tirages, compter puzzles uniques et indices superflus, pas simplement les puzzles résolus.
+- **Plan B sans API** : constituer un lot de sorties figées et le livrer avec les entrées et le vérificateur local ; distinguer les résultats rejoués des nouvelles générations.
+- **CoursIA** : [Structured Outputs](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/03_Structured_Outputs.ipynb) · [Function Calling](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/04_Function_Calling.ipynb).
+
+<a id="fiche-m4"></a>
+
+### M4 — Transformer une procédure en machine à états
+
+**Difficulté : 4/5**
+
+- **MVP et comparaison** : Traduire des règles de prêt en transitions typées. Comparer un prompt direct à une génération guidée par exemples de traces.
+- **Protocole de réussite** : Mesurer les traces acceptées à tort et les refus injustifiés sur toutes les séquences jusqu’à quatre événements.
+- **Plan B sans API** : constituer un lot de sorties figées et le livrer avec les entrées et le vérificateur local ; distinguer les résultats rejoués des nouvelles générations.
+- **CoursIA** : [Structured Outputs](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/03_Structured_Outputs.ipynb) · [Constrained Decoding Python](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/03c_Constrained_Decoding_Python.ipynb).
+
+<a id="fiche-m5"></a>
+
+### M5 — Produire un contre-exemple plutôt qu’un avis
+
+**Difficulté : 3/5**
+
+- **MVP et comparaison** : Donner deux petites règles tarifaires à un modèle. Lui faire construire un panier sur lequel les deux règles divergent, puis vérifier avec un interpréteur.
+- **Protocole de réussite** : Face au tirage aléatoire, mesurer divergences vérifiées par proposition et valeur minimale des paniers trouvés.
+- **Plan B sans API** : constituer un lot de sorties figées et le livrer avec les entrées et le vérificateur local ; distinguer les résultats rejoués des nouvelles générations.
+- **CoursIA** : [Structured Outputs](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/03_Structured_Outputs.ipynb) · [Function Calling](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/04_Function_Calling.ipynb).
+
+## Mesures, causalité et raisonnement quantitatif
+
+<a id="fiche-n1"></a>
+
+### N1 — Conserver les unités dans un compte rendu
+
+**Difficulté : 3/5**
+
+- **MVP et comparaison** : Convertir des mesures fictives de longueur et durée puis rédiger une synthèse. Comparer rédaction directe et calcul via outil avant rédaction.
+- **Protocole de réussite** : Tester vingt changements d’unités : erreur relative, unité finale correcte et contradictions entre chiffre et commentaire.
+- **Plan B sans API** : constituer un lot de sorties figées et le livrer avec les entrées et le vérificateur local ; distinguer les résultats rejoués des nouvelles générations.
+- **CoursIA** : [Structured Outputs](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/03_Structured_Outputs.ipynb) · [Function Calling](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/04_Function_Calling.ipynb).
+
+<a id="fiche-n2"></a>
+
+### N2 — Générer un mode d’emploi qui respecte les dépendances
+
+**Difficulté : 3/5**
+
+- **MVP et comparaison** : Produire une notice d’assemblage à partir d’un graphe de pièces. Comparer génération directe et tri topologique suivi d’une verbalisation.
+- **Protocole de réussite** : Compter les étapes prématurées et les pièces jamais introduites ; tester après permutation des identifiants.
+- **Plan B sans API** : constituer un lot de sorties figées et le livrer avec les entrées et le vérificateur local ; distinguer les résultats rejoués des nouvelles générations.
+- **CoursIA** : [PromptEngineering](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/02_PromptEngineering.ipynb) · [Structured Outputs](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/03_Structured_Outputs.ipynb).
+
+<a id="fiche-n3"></a>
+
+### N3 — Faire réviser une conclusion après une intervention
+
+**Difficulté : 4/5**
+
+- **MVP et comparaison** : Dans un petit simulateur de files d’attente, générer une prédiction puis la réviser après modification d’un paramètre. Opposer observation et intervention.
+- **Protocole de réussite** : Sur des scénarios tenus à part, mesurer signe correct de l’effet et fréquence des raisons incompatibles avec le simulateur.
+- **Plan B sans API** : constituer un lot de sorties figées et le livrer avec les entrées et le vérificateur local ; distinguer les résultats rejoués des nouvelles générations.
+- **CoursIA** : [PromptEngineering](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/02_PromptEngineering.ipynb) · [Function Calling](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/04_Function_Calling.ipynb).
+
+<a id="fiche-n4"></a>
+
+### N4 — Rédiger un bulletin qui respecte l’incertitude
+
+**Difficulté : 3/5**
+
+- **MVP et comparaison** : Transformer des séries fictives avec intervalles en courts bulletins. Comparer gabarit, rédaction libre et consigne avec bornes explicites.
+- **Protocole de réussite** : Mesurer les affirmations de hausse certaine lorsque les scénarios se contredisent, et la couverture des intervalles cités.
+- **Plan B sans API** : constituer un lot de sorties figées et le livrer avec les entrées et le vérificateur local ; distinguer les résultats rejoués des nouvelles générations.
+- **CoursIA** : [PromptEngineering](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/02_PromptEngineering.ipynb) · [Structured Outputs](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/03_Structured_Outputs.ipynb).
+
+<a id="fiche-n5"></a>
+
+### N5 — Auditer les dénominateurs d’une synthèse
+
+**Difficulté : 3/5**
+
+- **MVP et comparaison** : Générer des descriptions de tableaux à sous-populations inégales. Fabriquer un exemple où la tendance globale s’inverse après stratification.
+- **Protocole de réussite** : Mesurer combien de comparaisons nomment la bonne population et combien restent vraies après inversion des tailles de groupes.
+- **Plan B sans API** : constituer un lot de sorties figées et le livrer avec les entrées et le vérificateur local ; distinguer les résultats rejoués des nouvelles générations.
+- **CoursIA** : [Structured Outputs](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/03_Structured_Outputs.ipynb) · [Function Calling](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/04_Function_Calling.ipynb).
+
+## Accessibilité et transmission du sens
+
+<a id="fiche-o1"></a>
+
+### O1 — Adapter un texte sans perdre ses exceptions
+
+**Difficulté : 3/5**
+
+- **MVP et comparaison** : Réécrire des consignes fictives pour une lecture facile, en fixant des cas où « sauf si » change la décision. Comparer simplification libre et réécriture contrôlée par tests.
+- **Protocole de réussite** : Mesurer séparément longueur des phrases et décisions conservées ; analyser les exceptions effacées.
+- **Plan B sans API** : constituer un lot de sorties figées et le livrer avec les entrées et le vérificateur local ; distinguer les résultats rejoués des nouvelles générations.
+- **CoursIA** : [PromptEngineering](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/02_PromptEngineering.ipynb) · [Structured Outputs](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/03_Structured_Outputs.ipynb).
+
+<a id="fiche-o2"></a>
+
+### O2 — Restituer un tableau avec un lecteur d’écran
+
+**Difficulté : 3/5**
+
+- **MVP et comparaison** : Générer une description linéaire d’un tableau avec en-têtes imbriqués. Comparer lecture ligne à ligne et description guidée par les relations cellule–en-tête.
+- **Protocole de réussite** : Tester dix questions par table sans accès à l’original : exactitude et confusions de ligne ou de colonne.
+- **Plan B sans API** : constituer un lot de sorties figées et le livrer avec les entrées et le vérificateur local ; distinguer les résultats rejoués des nouvelles générations.
+- **CoursIA** : [PromptEngineering](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/02_PromptEngineering.ipynb) · [Structured Outputs](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/03_Structured_Outputs.ipynb).
+
+<a id="fiche-o3"></a>
+
+### O3 — Choisir un texte alternatif selon la tâche
+
+**Difficulté : 3/5**
+
+- **MVP et comparaison** : Pour douze graphiques synthétiques, générer deux descriptions : repérer un maximum ou comparer deux tendances. Comparer à une légende unique.
+- **Protocole de réussite** : Tester si un lecteur masqué du graphique retrouve la réponse, sans récompenser une description seulement plus longue.
+- **Plan B sans API** : constituer un lot de sorties figées et le livrer avec les entrées et le vérificateur local ; distinguer les résultats rejoués des nouvelles générations.
+- **CoursIA** : [PromptEngineering](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/02_PromptEngineering.ipynb) · [Structured Outputs](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/03_Structured_Outputs.ipynb).
+
+<a id="fiche-o4"></a>
+
+### O4 — Écrire une consigne qui survit à la traduction
+
+**Difficulté : 3/5**
+
+- **MVP et comparaison** : Créer un petit lexique bilingue fictif et des instructions spatiales. Traduire, puis faire exécuter chaque instruction sur une grille.
+- **Protocole de réussite** : Comparer traduction directe et lexique imposé sur la position finale, les axes inversés et les commandes ambiguës.
+- **Plan B sans API** : constituer un lot de sorties figées et le livrer avec les entrées et le vérificateur local ; distinguer les résultats rejoués des nouvelles générations.
+- **CoursIA** : [PromptEngineering](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/02_PromptEngineering.ipynb) · [Function Calling](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/04_Function_Calling.ipynb).
+
+## Édition, maintenance et couverture
+
+<a id="fiche-p1"></a>
+
+### P1 — Publier uniquement les changements utiles
+
+**Difficulté : 3/5**
+
+- **MVP et comparaison** : Générer les notes de version d’un règlement à partir de deux états. Comparer résumé des deux versions et verbalisation d’un diff structuré.
+- **Protocole de réussite** : Distinguer renommages sans effet, changements réels et règles inchangées ; mesurer précision et rappel sur ces classes.
+- **Plan B sans API** : constituer un lot de sorties figées et le livrer avec les entrées et le vérificateur local ; distinguer les résultats rejoués des nouvelles générations.
+- **CoursIA** : [PromptEngineering](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/02_PromptEngineering.ipynb) · [Structured Outputs](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/03_Structured_Outputs.ipynb).
+
+<a id="fiche-p2"></a>
+
+### P2 — Fusionner deux corrections éditoriales
+
+**Difficulté : 4/5**
+
+- **MVP et comparaison** : Faire proposer un texte final après deux modifications indépendantes du même paragraphe. Comparer fusion textuelle et génération guidée par contraintes.
+- **Protocole de réussite** : Mesurer les corrections conservées des deux côtés et les conflits effectivement signalés sur vingt triplets.
+- **Plan B sans API** : constituer un lot de sorties figées et le livrer avec les entrées et le vérificateur local ; distinguer les résultats rejoués des nouvelles générations.
+- **CoursIA** : [PromptEngineering](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/02_PromptEngineering.ipynb) · [Structured Outputs](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/03_Structured_Outputs.ipynb).
+
+<a id="fiche-p3"></a>
+
+### P3 — Générer un index de renvois qui reste valide
+
+**Difficulté : 3/5**
+
+- **MVP et comparaison** : Créer des notices courtes avec renvois croisés puis déplacer ou scinder des sections. Faire réparer les renvois par titre ou par contexte.
+- **Protocole de réussite** : Compter les liens valides qui pointent pourtant vers le mauvais passage, avec une vérité terrain fixée avant renommage.
+- **Plan B sans API** : constituer un lot de sorties figées et le livrer avec les entrées et le vérificateur local ; distinguer les résultats rejoués des nouvelles générations.
+- **CoursIA** : [RAG Modern](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/05_RAG_Modern.ipynb) · [Structured Outputs](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/03_Structured_Outputs.ipynb).
+
+<a id="fiche-p4"></a>
+
+### P4 — Construire des exemples qui couvrent une règle
+
+**Difficulté : 3/5**
+
+- **MVP et comparaison** : Faire générer des exemples pour une grammaire de dates fictive, puis comparer à un tirage aléatoire de chaînes acceptables.
+- **Protocole de réussite** : Mesurer couverture des branches du parseur, diversité des frontières et cas rejetés par erreur, à budget d’exemples égal.
+- **Plan B sans API** : constituer un lot de sorties figées et le livrer avec les entrées et le vérificateur local ; distinguer les résultats rejoués des nouvelles générations.
+- **CoursIA** : [Constrained Decoding Python](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/03c_Constrained_Decoding_Python.ipynb) · [PromptEngineering](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/02_PromptEngineering.ipynb).
+
+## Jeux, récits et choix collectifs
+
+<a id="fiche-q1"></a>
+
+### Q1 — Créer un récit dont le lecteur choisit le chemin
+
+**Difficulté : 4/5**
+
+- **MVP et comparaison** : Faire écrire un récit à embranchements depuis un automate de personnages et d’objets. Comparer génération libre et rédaction depuis un état explicite.
+- **Protocole de réussite** : Énumérer les chemins courts : objets utilisés avant acquisition et fins inaccessibles ; relire trois chemins à l’aveugle.
+- **Plan B sans API** : constituer un lot de sorties figées et le livrer avec les entrées et le vérificateur local ; distinguer les résultats rejoués des nouvelles générations.
+- **CoursIA** : [Structured Outputs](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/03_Structured_Outputs.ipynb) · [Function Calling](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/04_Function_Calling.ipynb).
+
+<a id="fiche-q2"></a>
+
+### Q2 — Faire deviner une notion sans la nommer
+
+**Difficulté : 3/5**
+
+- **MVP et comparaison** : Générer des indices pour un jeu de vocabulaire fictif, avec mots interdits et voisins sémantiques proches. Opposer premier indice et révision après test.
+- **Protocole de réussite** : Mesurer mots interdits, nombre de candidats encore compatibles et taux de résolution par des lecteurs indépendants.
+- **Plan B sans API** : constituer un lot de sorties figées et le livrer avec les entrées et le vérificateur local ; distinguer les résultats rejoués des nouvelles générations.
+- **CoursIA** : [PromptEngineering](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/02_PromptEngineering.ipynb) · [Structured Outputs](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/03_Structured_Outputs.ipynb).
+
+<a id="fiche-q3"></a>
+
+### Q3 — Expliquer deux résultats de vote contradictoires
+
+**Difficulté : 3/5**
+
+- **MVP et comparaison** : Sur des préférences fictives, calculer deux méthodes de scrutin puis demander une explication du désaccord. Comparer explication directe et rédaction après calcul vérifié.
+- **Protocole de réussite** : Vérifier chaque total et chaque comparaison citée, puis permuter les noms : une bonne explication doit rester équivalente.
+- **Plan B sans API** : constituer un lot de sorties figées et le livrer avec les entrées et le vérificateur local ; distinguer les résultats rejoués des nouvelles générations.
+- **CoursIA** : [Function Calling](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/04_Function_Calling.ipynb) · [Structured Outputs](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/03_Structured_Outputs.ipynb).

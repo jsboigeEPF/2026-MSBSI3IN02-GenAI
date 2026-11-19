@@ -1,7 +1,10 @@
 ---
 theme: default
+colorSchema: light
 title: Générer ne suffit pas — le laboratoire Atlas
 ---
+
+<div class="eyebrow">CAHIER D’EXPÉRIENCES　/　01</div>
 
 # Générer ne suffit pas
 
@@ -53,7 +56,7 @@ Le modèle produit une distribution sur les prochains **tokens**, pas un vote su
 
 # Du texte récupéré à la réponse justifiée
 
-**Question → recherche → passage → génération → contrôle de citation**
+<div class="pipeline"><span>Question</span> → <span>Recherche</span> → <span>Passage</span> → <span>Génération</span> → <span>Preuve ?</span></div>
 
 | Observation | Où chercher la panne ? |
 |---|---|
@@ -94,9 +97,7 @@ Proposez deux tests distincts : un test automatique de structure et un test de f
 
 Exemple fictif : trois questions répondables et deux sans réponse. Le système répond juste à deux des trois et s’abstient correctement sur les deux autres.
 
-- Exactitude globale : **4/5**.
-- Questions répondables résolues : **2/3**.
-- Abstentions justifiées sur questions impossibles : **2/2**.
+<div class="scores"><div><b>4/5</b>Exactitude globale</div><div><b>2/3</b>Questions répondables résolues</div><div><b>2/2</b>Abstentions justifiées</div></div>
 
 Un système qui s’abstient toujours obtient **2/5**. Quel score masquerait le coût de ses refus ?
 

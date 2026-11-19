@@ -14,15 +14,15 @@ Choisissez une famille, puis comparez le résultat à démontrer et la manière 
 
 **Adaptation et inférence**　[I1 : QLoRA sans contamination de l'évaluation](#fiche-i1) · [I2 : Inférence locale .NET face aux API cloud](#fiche-i2) · [I3 : Frontière coût-précision du test-time compute](#fiche-i3) · [I4 : Fusion et routage de modèles spécialisés](#fiche-i4)
 
-**Génération sous contraintes symboliques**　[M1 : Traduire une règle en contraintes de planning](#fiche-m1) · [M2 : Expliquer pourquoi un puzzle est impossible](#fiche-m2) · [M3 : Inventer des énigmes à solution unique](#fiche-m3) · [M4 : Transformer une procédure en machine à états](#fiche-m4) · [M5 : Produire un contre-exemple plutôt qu’un avis](#fiche-m5)
+**Génération sous contraintes symboliques**　[M1 : Du cahier des charges au planning certifié](#fiche-m1) · [M2 : Expliquer pourquoi un puzzle est impossible](#fiche-m2) · [M3 : Mots croisés : générer des définitions qui laissent une solution unique](#fiche-m3) · [M4 : Transformer une procédure en machine à états](#fiche-m4) · [M5 : Produire un contre-exemple plutôt qu’un avis](#fiche-m5)
 
-**Mesures, causalité et raisonnement quantitatif**　[N1 : Conserver les unités dans un compte rendu](#fiche-n1) · [N2 : Générer un mode d’emploi qui respecte les dépendances](#fiche-n2) · [N3 : Faire réviser une conclusion après une intervention](#fiche-n3) · [N4 : Rédiger un bulletin qui respecte l’incertitude](#fiche-n4) · [N5 : Auditer les dénominateurs d’une synthèse](#fiche-n5)
+**Mesures, causalité et raisonnement quantitatif**　[N1 : Conserver les unités dans un compte rendu](#fiche-n1) · [N2 : Générer un mode d’emploi qui respecte les dépendances](#fiche-n2) · [N3 : Un assistant distingue-t-il observer et intervenir ?](#fiche-n3) · [N4 : Rédiger un bulletin qui respecte l’incertitude](#fiche-n4) · [N5 : Auditer les dénominateurs d’une synthèse](#fiche-n5)
 
 **Accessibilité et transmission du sens**　[O1 : Adapter un texte sans perdre ses exceptions](#fiche-o1) · [O2 : Restituer un tableau avec un lecteur d’écran](#fiche-o2) · [O3 : Choisir un texte alternatif selon la tâche](#fiche-o3) · [O4 : Écrire une consigne qui survit à la traduction](#fiche-o4)
 
-**Édition, maintenance et couverture**　[P1 : Publier uniquement les changements utiles](#fiche-p1) · [P2 : Fusionner deux corrections éditoriales](#fiche-p2) · [P3 : Générer un index de renvois qui reste valide](#fiche-p3) · [P4 : Construire des exemples qui couvrent une règle](#fiche-p4)
+**Édition, maintenance et couverture**　[P1 : Publier uniquement les changements utiles](#fiche-p1) · [P2 : Compression : apprendre une recette, certifier son inverse](#fiche-p2) · [P3 : Générer un index de renvois qui reste valide](#fiche-p3) · [P4 : Construire des exemples qui couvrent une règle](#fiche-p4)
 
-**Jeux, récits et choix collectifs**　[Q1 : Créer un récit dont le lecteur choisit le chemin](#fiche-q1) · [Q2 : Faire deviner une notion sans la nommer](#fiche-q2) · [Q3 : Expliquer deux résultats de vote contradictoires](#fiche-q3)
+**Jeux, récits et choix collectifs**　[Q1 : Créer un récit dont le lecteur choisit le chemin](#fiche-q1) · [Q2 : Contrepoint : du solveur au rendu audio génératif](#fiche-q2) · [Q3 : Expliquer un désaccord entre scrutins avec un certificat de calcul](#fiche-q3)
 
 ## Texte, mémoire et dialogue
 
@@ -519,14 +519,16 @@ Combiner ou router de petits modèles spécialisés sans perdre leurs compétenc
 
 <a id="fiche-m1"></a>
 
-### M1 — Traduire une règle en contraintes de planning
+### M1 — Du cahier des charges au planning certifié
 
-**Difficulté : 3/5**
+**Difficulté : 4/5 · projet hybride CoursIA**
 
-- **MVP et comparaison** : Transformer douze règlements fictifs en contraintes sur six créneaux. Comparer le texte libre à une grammaire limitée puis à un solveur exhaustif.
-- **Protocole de réussite** : Compter les violations sur des plannings jamais vus et les problèmes déclarés possibles à tort.
-- **Plan B sans API** : constituer un lot de sorties figées et le livrer avec les entrées et le vérificateur local ; distinguer les résultats rejoués des nouvelles générations.
-- **CoursIA** : [Structured Outputs](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/03_Structured_Outputs.ipynb) · [Function Calling](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/04_Function_Calling.ipynb).
+- **Chaîne à construire** : Extraire machines, durées et précédences depuis des commandes fictives vers un schéma typé. Refuser les paramètres manquants au lieu de les inventer.
+- **Comparaison et séparation des tests** : Comparer extraction par règles, LLM seul et LLM suivi du solveur. Comparer à la solution issue des données exactes ; réserver des reformulations et des instances infaisables.
+- **Preuve attendue** : Mesurer champs exacts, collisions, respect des précédences et écart de durée totale. Rendre une trace qui sépare erreur de traduction et erreur de planification.
+- **Plan B** : figer les propositions du modèle et les données de test ; le calcul de référence et la vérification doivent rester exécutables sans réseau.
+- **Notebooks de départ** : [App-04-JobShopScheduling-Python](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/Search/Part3-Cas-pratiques/App-04-JobShopScheduling-Python.ipynb) · [03_Structured_Outputs](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/03_Structured_Outputs.ipynb).
+
 
 <a id="fiche-m2"></a>
 
@@ -541,14 +543,16 @@ Combiner ou router de petits modèles spécialisés sans perdre leurs compétenc
 
 <a id="fiche-m3"></a>
 
-### M3 — Inventer des énigmes à solution unique
+### M3 — Mots croisés : générer des définitions qui laissent une solution unique
 
-**Difficulté : 3/5**
+**Difficulté : 4/5 · projet hybride CoursIA**
 
-- **MVP et comparaison** : Générer des indices pour un jeu de déduction à quatre personnages ; un énumérateur indépendant compte les solutions. Comparer génération directe et révision après comptage.
-- **Protocole de réussite** : Sur trente tirages, compter puzzles uniques et indices superflus, pas simplement les puzzles résolus.
-- **Plan B sans API** : constituer un lot de sorties figées et le livrer avec les entrées et le vérificateur local ; distinguer les résultats rejoués des nouvelles générations.
-- **CoursIA** : [Structured Outputs](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/03_Structured_Outputs.ipynb) · [Function Calling](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/04_Function_Calling.ipynb).
+- **Chaîne à construire** : Sur un lexique fermé, générer une définition et consigner les mots qu’un lecteur juge compatibles. Faire résoudre la grille avec ces domaines au lieu de révéler la réponse au solveur.
+- **Comparaison et séparation des tests** : Comparer définitions de dictionnaire, génération libre et révision lorsque deux remplissages restent possibles. Garder des grilles entières hors mise au point.
+- **Preuve attendue** : Mesurer unicité par énumération, acceptabilité des définitions à l’aveugle et temps de résolution. Une grille unique grâce aux croisements ne prouve pas une bonne définition.
+- **Plan B** : figer les propositions du modèle et les données de test ; le calcul de référence et la vérification doivent rester exécutables sans réseau.
+- **Notebooks de départ** : [App-16-Crossword-CSP-Python](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/Search/Part3-Cas-pratiques/App-16-Crossword-CSP-Python.ipynb) · [02_PromptEngineering](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/02_PromptEngineering.ipynb).
+
 
 <a id="fiche-m4"></a>
 
@@ -598,14 +602,16 @@ Combiner ou router de petits modèles spécialisés sans perdre leurs compétenc
 
 <a id="fiche-n3"></a>
 
-### N3 — Faire réviser une conclusion après une intervention
+### N3 — Un assistant distingue-t-il observer et intervenir ?
 
-**Difficulté : 4/5**
+**Difficulté : 4/5 · projet hybride CoursIA**
 
-- **MVP et comparaison** : Dans un petit simulateur de files d’attente, générer une prédiction puis la réviser après modification d’un paramètre. Opposer observation et intervention.
-- **Protocole de réussite** : Sur des scénarios tenus à part, mesurer signe correct de l’effet et fréquence des raisons incompatibles avec le simulateur.
-- **Plan B sans API** : constituer un lot de sorties figées et le livrer avec les entrées et le vérificateur local ; distinguer les résultats rejoués des nouvelles générations.
-- **CoursIA** : [PromptEngineering](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/02_PromptEngineering.ipynb) · [Function Calling](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/04_Function_Calling.ipynb).
+- **Chaîne à construire** : Construire deux graphes causaux sur des variables fictives. Le modèle traduit une demande en observation ou intervention ; un moteur calcule les deux quantités.
+- **Comparaison et séparation des tests** : Comparer réponse directe, appel outil libre et appel avec contrôle des arguments. Faire varier le facteur de confusion sans modifier le texte de la question.
+- **Preuve attendue** : Mesurer choix de l’opération, erreur sur l’effet et abstention quand le graphe ne permet pas de conclure. Livrer des contre-exemples à une lecture purement corrélationnelle.
+- **Plan B** : figer les propositions du modèle et les données de test ; le calcul de référence et la vérification doivent rester exécutables sans réseau.
+- **Notebooks de départ** : [PyMC-05-Causal-Inference](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/Probas/PyMC/PyMC-05-Causal-Inference.ipynb) · [04_Function_Calling](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/04_Function_Calling.ipynb).
+
 
 <a id="fiche-n4"></a>
 
@@ -690,14 +696,16 @@ Combiner ou router de petits modèles spécialisés sans perdre leurs compétenc
 
 <a id="fiche-p2"></a>
 
-### P2 — Fusionner deux corrections éditoriales
+### P2 — Compression : apprendre une recette, certifier son inverse
 
-**Difficulté : 4/5**
+**Difficulté : 4/5 · projet hybride CoursIA**
 
-- **MVP et comparaison** : Faire proposer un texte final après deux modifications indépendantes du même paragraphe. Comparer fusion textuelle et génération guidée par contraintes.
-- **Protocole de réussite** : Mesurer les corrections conservées des deux côtés et les conflits effectivement signalés sur vingt triplets.
-- **Plan B sans API** : constituer un lot de sorties figées et le livrer avec les entrées et le vérificateur local ; distinguer les résultats rejoués des nouvelles générations.
-- **CoursIA** : [PromptEngineering](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/02_PromptEngineering.ipynb) · [Structured Outputs](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/03_Structured_Outputs.ipynb).
+- **Chaîne à construire** : Faire proposer une suite de primitives autorisées, jamais du code libre. Le décodeur ne consulte pas le LLM. Compter recette, dictionnaire et résidu dans la taille finale.
+- **Comparaison et séparation des tests** : Opposer codec fixe, recherche exhaustive à petit budget et triage LLM sur textes, enregistrements et octets aléatoires. Séparer par famille de fichiers, pas par fragments du même fichier. Rejeter toute recette sans reconstruction octet pour octet.
+- **Preuve attendue** : Publier taux de reconstruction, octets nets par famille, temps de choix et temps de décodage. Isoler les cas où la recette coûte plus cher que les données.
+- **Plan B** : figer les propositions du modèle et les données de test ; le calcul de référence et la vérification doivent rester exécutables sans réseau.
+- **Notebooks de départ** : [Compression-05b-NeuroSymbolic-Recipe-Python](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/Compression/Compression-05b-NeuroSymbolic-Recipe-Python.ipynb) · [Compression-07-Triage-LLM-Operations-Reelles-Python](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/Compression/Compression-07-Triage-LLM-Operations-Reelles-Python.ipynb).
+
 
 <a id="fiche-p3"></a>
 
@@ -736,22 +744,25 @@ Combiner ou router de petits modèles spécialisés sans perdre leurs compétenc
 
 <a id="fiche-q2"></a>
 
-### Q2 — Faire deviner une notion sans la nommer
+### Q2 — Contrepoint : du solveur au rendu audio génératif
 
-**Difficulté : 3/5**
+**Difficulté : 4/5 · projet hybride CoursIA**
 
-- **MVP et comparaison** : Générer des indices pour un jeu de vocabulaire fictif, avec mots interdits et voisins sémantiques proches. Opposer premier indice et révision après test.
-- **Protocole de réussite** : Mesurer mots interdits, nombre de candidats encore compatibles et taux de résolution par des lecteurs indépendants.
-- **Plan B sans API** : constituer un lot de sorties figées et le livrer avec les entrées et le vérificateur local ; distinguer les résultats rejoués des nouvelles générations.
-- **CoursIA** : [PromptEngineering](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/02_PromptEngineering.ipynb) · [Structured Outputs](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/03_Structured_Outputs.ipynb).
+- **Chaîne à construire** : Produire deux conduites de voix sur la même basse, l’une conforme et l’autre avec un croisement contrôlé. Rendre chaque partition au synthétiseur puis avec un modèle génératif.
+- **Comparaison et séparation des tests** : Fixer tempo et tonalité ; varier seulement rendu ou partition. Comparer classes de hauteurs attendues et chromagramme, puis organiser une écoute aveugle sur des phrases nouvelles.
+- **Preuve attendue** : Livrer partitions, audio, matrice des erreurs et un cas où le timbre masque une faute : distinguer correction de la partition et fidélité de la génération.
+- **Plan B** : figer les propositions du modèle et les données de test ; le calcul de référence et la vérification doivent rester exécutables sans réseau.
+- **Notebooks de départ** : [App-21-VoiceLeading-Python](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/Search/Part3-Cas-pratiques/App-21-VoiceLeading-Python.ipynb) · [04-14-VoiceLeading-Rendu-GenAI](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Audio/04-Applications/04-14-VoiceLeading-Rendu-GenAI.ipynb).
+
 
 <a id="fiche-q3"></a>
 
-### Q3 — Expliquer deux résultats de vote contradictoires
+### Q3 — Expliquer un désaccord entre scrutins avec un certificat de calcul
 
-**Difficulté : 3/5**
+**Difficulté : 4/5 · projet hybride CoursIA**
 
-- **MVP et comparaison** : Sur des préférences fictives, calculer deux méthodes de scrutin puis demander une explication du désaccord. Comparer explication directe et rédaction après calcul vérifié.
-- **Protocole de réussite** : Vérifier chaque total et chaque comparaison citée, puis permuter les noms : une bonne explication doit rester équivalente.
-- **Plan B sans API** : constituer un lot de sorties figées et le livrer avec les entrées et le vérificateur local ; distinguer les résultats rejoués des nouvelles générations.
-- **CoursIA** : [Function Calling](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/04_Function_Calling.ipynb) · [Structured Outputs](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/03_Structured_Outputs.ipynb).
+- **Chaîne à construire** : Produire des profils fictifs où deux scrutins élisent des candidats différents. Faire citer les étapes de dépouillement par le modèle, puis les vérifier indépendamment.
+- **Comparaison et séparation des tests** : Comparer explication libre et génération depuis une trace typée. Permuter les noms, dupliquer tous les bulletins, tester ex æquo et cycles.
+- **Preuve attendue** : Publier exactitude des totaux, cohérence sous permutation et fidélité de l’explication lorsque le résultat change réellement.
+- **Plan B** : figer les propositions du modèle et les données de test ; le calcul de référence et la vérification doivent rester exécutables sans réseau.
+- **Notebooks de départ** : [ChoixSocial-03-Voting-Methods-Python](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GameTheory/SocialChoice/ChoixSocial-03-Voting-Methods-Python.ipynb) · [04_Function_Calling](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/04_Function_Calling.ipynb).

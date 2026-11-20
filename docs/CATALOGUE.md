@@ -1,4 +1,4 @@
-# Catalogue Bachelor — 87 projets
+# Catalogue Bachelor — 94 projets
 
 Chaque fiche pose une question précise, dit ce qu'il faut construire pour y répondre et comment mesurer le résultat. Choisissez une famille, puis comparez les fiches sur trois points : le verrou technique, le protocole de réussite et le plan B.
 
@@ -31,6 +31,8 @@ Tous les projets tiennent en six semaines et restent démontrables sans API paya
 **Preuve, connaissance et argumentation** (8)　[R1 : Preuves Lean : le modèle propose, le noyau vérifie](#fiche-r1) · [R2 : Graphe ou passages : quelle question demande quoi ?](#fiche-r2) · [R3 : Du texte au graphe de connaissances validé](#fiche-r3) · [R4 : Qui a raison ? Du débat au graphe d'arguments](#fiche-r4) · [R5 : Apprendre une règle depuis des exemples : LLM contre logique inductive](#fiche-r5) · [R6 : Contrats intelligents : audit par LLM, preuve par fuzzing](#fiche-r6) · [R7 : Retrouver une loi à partir de mesures](#fiche-r7) · [R8 : Un LLM peut-il servir d'oracle pour apprendre un automate ?](#fiche-r8)
 
 **Décision, apprentissage par renforcement et marchés** (7)　[S1 : Signaux de marché lus par un LLM : gain réel ou mémoire du futur ?](#fiche-s1) · [S2 : Séries temporelles synthétiques par diffusion : réalistes et utiles ?](#fiche-s2) · [S3 : Une récompense rédigée par un LLM se fait-elle contourner ?](#fiche-s3) · [S4 : Le LLM comme optimiseur d'hyperparamètres](#fiche-s4) · [S5 : Choisir le bon solveur en lisant l'énoncé](#fiche-s5) · [S6 : Planifier avant de coder : la boucle vaut-elle son coût ?](#fiche-s6) · [S7 : Recommander avec des identifiants sémantiques](#fiche-s7)
+
+**Sécurité et confiance des systèmes génératifs** (7)　[T1 : Repérer un jailbreak à sa trajectoire, pas à son texte](#fiche-t1) · [T2 : La propagande est-elle plus compressible que l'information ?](#fiche-t2) · [T3 : Agent par capacités : prouver qu'une donnée ne déclenche aucune action](#fiche-t3) · [T4 : Code cryptographique généré : le tester au lieu de le relire](#fiche-t4) · [T5 : Trouver les exemples empoisonnés par la signature spectrale](#fiche-t5) · [T6 : Une décision tient-elle face à un contre-argument ?](#fiche-t6) · [T7 : Agent d'entreprise : demander l'accord seulement pour l'irréversible](#fiche-t7)
 
 ## Texte, mémoire et dialogue
 
@@ -1534,3 +1536,124 @@ Un recommandeur classique donne à chaque film un numéro arbitraire. Une approc
 **CoursIA** : [Identifiants sémantiques](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/ML/ML.Net/ML-07b-SemanticIDs-Recommandation-Python.ipynb) · [Embeddings depuis zéro](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/RAG-et-Memoire-Semantique/03-Embeddings-From-Scratch.ipynb) · [Stockage vectoriel](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/RAG-et-Memoire-Semantique/05-Stockage-Vectoriel.ipynb)
 
 **Références** : [TIGER](https://arxiv.org/abs/2305.05065) · [Differentiable Search Index](https://arxiv.org/abs/2202.06991) · [MovieLens](https://grouplens.org/datasets/movielens/)
+
+## Sécurité et confiance des systèmes génératifs
+
+<a id="fiche-t1"></a>
+
+### T1 — Repérer un jailbreak à sa trajectoire, pas à son texte
+
+**Difficulté : 5/5** · Mots-clés : `jailbreak`, `multi-tours`, `trajectoire`, `garde-fou`, `pré-enregistrement` · hybride CoursIA
+
+Un jailbreak en plusieurs tours ne contient souvent aucune phrase interdite : il fait basculer le modèle, tour après tour, du refus vers l'acceptation. Une hypothèse de CoursIA propose de lire ce basculement comme une trajectoire à sens unique, mesurée par une irréversibilité et une compressibilité. Sur trois modèles, le banc de CoursIA l'a réfutée tel quel : la séparation existe, le critère temporel échoue. Le projet confronte cette lecture à un garde-fou classique sur des conversations réelles, avec un protocole écrit avant la mesure.
+
+- **MVP** : Trente conversations d'attaque en plusieurs tours et trente conversations bénignes qui se durcissent sans attaque ; un classifieur de modération et une sonde sur la direction du refus comme références ; un détecteur de trajectoire sur l'état du modèle à chaque tour ; protocole et seuils déposés avant de lancer la campagne.
+- **Réussite** : Détection par tour (rappel, faux positifs sur les conversations bénignes), tour de l'alerte comparé au tour du basculement, test contre des trajectoires mélangées. Un résultat négatif documenté vaut un résultat positif.
+- **Extensions** : Attaques adaptatives qui connaissent le détecteur ; combinaison des deux signaux ; coût de calcul par tour.
+- **Faisabilité** : Modèle local de moins de 2 milliards de paramètres sur CPU, conversations publiques ou synthétiques ; aucune API payante. Plan B : états du modèle pré-extraits, seule la détection tourne en direct.
+
+**CoursIA** : [Trajectoires de croyances](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/IIT/ICT-Series/ICT-Argumentation-BeliefTrajectories-Python.ipynb) · [Direction du refus](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Security/Control/Control-Refusal-Direction.ipynb) · [Red team au-delà de l’injection](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Security/RedTeam/RedTeam-Beyond-Injection.ipynb) · [Sécurité des prompts](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/09b_Prompt_Security_RedTeam.ipynb)
+
+**Références** : [JailbreakBench](https://arxiv.org/abs/2404.01318) · [Llama Guard](https://arxiv.org/abs/2312.06674) · [Refusal in Language Models Is Mediated by a Single Direction](https://arxiv.org/abs/2406.11717) · [Crescendo multi-turn jailbreak](https://arxiv.org/abs/2404.01833)
+
+<a id="fiche-t2"></a>
+
+### T2 — La propagande est-elle plus compressible que l'information ?
+
+**Difficulté : 4/5** · Mots-clés : `désinformation`, `compression`, `MDL`, `distance de compression`, `détection` · hybride CoursIA
+
+Une intuition circule : le slogan et la propagande se répètent, donc se compressent mieux qu'un texte informatif. Elle se teste sans réseau de neurones : un compresseur standard donne une distance entre textes, et un code à deux parties mesure ce qu'un texte apporte au-delà de son modèle. Le projet confronte ce signal à un détecteur appris sur des corpus annotés, et cherche ce que la compression capte vraiment : la propagande, ou seulement la longueur et le genre.
+
+- **MVP** : Deux corpus publics annotés (techniques de propagande, affirmations vérifiées) ; classifieur par distance de compression ; mesure à deux parties du gain d'information ; référence par modèle de langue affiné ou zéro-shot ; contrôle à longueur et source égales.
+- **Réussite** : F1 et calibration des trois approches sur un découpage par source, écart avant et après contrôle de longueur, analyse des erreurs sur quarante exemples relus.
+- **Extensions** : Textes générés par LLM imitant chaque style ; flux multilingue ; explication par segments les plus compressibles.
+- **Faisabilité** : Compression et classification sur CPU, corpus publics ; budget inférieur à 5 € si une API sert de référence. Plan B : référence par modèle local, corpus réduit.
+
+**CoursIA** : [Code MDL à deux parties](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/IIT/ICT-Series/ICT-16-MDLTwoPartCode-Python.ipynb) · [Détection de sophismes](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/SymbolicAI/ArgumentAnalysis/Argumentation-02-Fallacies-Detection-Python.ipynb) · [Synthèse argumentation et ICT](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/IIT/ICT-Series/ICT-Argumentation-Capstone-Python.ipynb)
+
+**Références** : [Less is More: Parameter-Free Text Classification with Gzip](https://arxiv.org/abs/2212.09410) · [SemEval-2020 Task 11: Detection of Propaganda Techniques](https://arxiv.org/abs/2009.02696) · [LIAR dataset](https://arxiv.org/abs/1705.00648) · [Clustering by compression](https://doi.org/10.1109/TIT.2005.844059)
+
+<a id="fiche-t3"></a>
+
+### T3 — Agent par capacités : prouver qu'une donnée ne déclenche aucune action
+
+**Difficulté : 5/5** · Mots-clés : `agents`, `injection indirecte`, `capacités`, `flux de données`, `MCP` · hybride CoursIA
+
+Filtrer les injections de prompt revient à deviner l'intention d'un texte. Une autre voie sépare deux rôles : un modèle de confiance écrit le plan à partir de la seule demande de l'utilisateur, un modèle isolé lit les données sans pouvoir appeler d'outil, et chaque valeur porte l'étiquette de sa provenance. Le projet construit cet agent et montre, par la trace d'exécution, qu'aucune valeur venue d'un document ou d'un outil n'a choisi une action. Le verrou est la garantie par construction, pas le score d'un filtre.
+
+- **MVP** : Agent courriel et fichiers avec quatre outils locaux ; interpréteur qui étiquette chaque valeur et refuse un appel dont un argument sensible provient d'une donnée non fiable ; vingt tâches utiles et vingt injections indirectes rejouées.
+- **Réussite** : Taux de succès des injections et taux de tâches réussies, comparés à un agent ReAct simple avec et sans filtre ; chaque refus expliqué par la chaîne de provenance.
+- **Extensions** : Politiques par outil ; serveur MCP hostile dont la description change ; coût en appels de modèle.
+- **Faisabilité** : Outils simulés en local, API texte ou modèle local ; budget inférieur à 8 €. Plan B : plans figés, interpréteur et politiques testés seuls.
+
+**CoursIA** : [Surface d’attaque des outils MCP](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Security/Tooling/Tooling-MCP-Attack-Surface.ipynb) · [Red team au-delà de l’injection](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Security/RedTeam/RedTeam-Beyond-Injection.ipynb) · [Function calling](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/04_Function_Calling.ipynb) · [Sécurité des prompts](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/09b_Prompt_Security_RedTeam.ipynb)
+
+**Références** : [Defeating Prompt Injections by Design (CaMeL)](https://arxiv.org/abs/2503.18813) · [AgentDojo](https://arxiv.org/abs/2406.13352) · [Indirect prompt injection](https://arxiv.org/abs/2302.12173) · [Model Context Protocol specification](https://modelcontextprotocol.io/specification)
+
+<a id="fiche-t4"></a>
+
+### T4 — Code cryptographique généré : le tester au lieu de le relire
+
+**Difficulté : 4/5** · Mots-clés : `cryptographie`, `code généré`, `tests de propriétés`, `mauvais usage`, `sécurité` · hybride CoursIA
+
+Un assistant de code écrit volontiers un chiffrement qui fonctionne et qui est faux : vecteur d'initialisation fixe, mode sans authentification, mot de passe haché sans sel. Le code passe ses tests, l'erreur ne se voit pas à l'œil. Le projet fait écrire des fonctions de chiffrement, de signature et de stockage de mots de passe, puis les soumet à des tests de propriétés : deux chiffrements du même message diffèrent, un octet modifié fait échouer le déchiffrement, deux mots de passe identiques donnent deux empreintes différentes.
+
+- **MVP** : Quinze tâches cryptographiques courtes en Python ; trois manières de demander (consigne nue, consigne de sécurité, bibliothèque imposée) ; batterie de tests de propriétés par tâche ; analyseur statique comme second avis.
+- **Réussite** : Taux de mauvais usages par manière de demander, désaccords entre tests et analyseur statique, failles trouvées par un seul des deux.
+- **Extensions** : Boucle de réparation guidée par le test qui échoue ; même étude en C# ; tâches de dérivation de clé et d'échange de clés.
+- **Faisabilité** : Bibliothèque cryptography en local, aucun secret réel, API texte ou modèle local ; budget inférieur à 6 €. Plan B : sorties de modèle figées, batterie de tests seule.
+
+**CoursIA** : [Garde-fous Roslyn](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Vibe-Coding/analyzers/Roslyn-Code-Guardrails.ipynb) · [Chiffrement homomorphe](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/SymbolicAI/SmartContracts/04-Privacy-Cryptography/SC-16-Homomorphic-Encryption-Python.ipynb) · [Preuves à divulgation nulle](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/SymbolicAI/SmartContracts/04-Privacy-Cryptography/SC-15-Zero-Knowledge-Proofs-Python.ipynb)
+
+**Références** : [Asleep at the Keyboard? Copilot code security](https://arxiv.org/abs/2108.09293) · [CyberSecEval](https://arxiv.org/abs/2312.04724) · [NIST SP 800-38D (GCM)](https://doi.org/10.6028/NIST.SP.800-38D) · [pyca/cryptography](https://cryptography.io/en/latest/)
+
+<a id="fiche-t5"></a>
+
+### T5 — Trouver les exemples empoisonnés par la signature spectrale
+
+**Difficulté : 4/5** · Mots-clés : `empoisonnement`, `porte dérobée`, `SVD`, `activations`, `défense`
+
+Quelques exemples d'entraînement porteurs d'un déclencheur suffisent à installer une porte dérobée dans un classifieur. Dans l'espace des activations, ces exemples tirent souvent la même direction : la première composante singulière de leur classe les isole. Le projet empoisonne un petit modèle de texte, applique cette détection spectrale et une détection par regroupement, puis réentraîne sans les exemples signalés.
+
+- **MVP** : Classifieur de sentiment affiné sur un corpus public ; trois taux d'empoisonnement ; scores spectraux et regroupement des activations par classe ; réentraînement après retrait des exemples suspects.
+- **Réussite** : Exemples empoisonnés retrouvés et exemples sains écartés à tort, taux de succès de l'attaque avant et après nettoyage, précision sur les données saines.
+- **Extensions** : Déclencheur paraphrasé plus discret ; modèle génératif de code ; comparaison avec une sonde sur les poids.
+- **Faisabilité** : Petit modèle de type DistilBERT sur CPU, corpus public ; aucune API. Plan B : activations pré-calculées, seule la détection tourne.
+
+**CoursIA** : [Neurones dormants](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Security/Oversight/Backdoor-Dormant-Neurons.ipynb) · [Red team au-delà de l’injection](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Security/RedTeam/RedTeam-Beyond-Injection.ipynb) · [Porte dérobée dans du code](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Security/Oversight/Backdoor-Code-From-Scratch.ipynb)
+
+**Références** : [Spectral Signatures in Backdoor Attacks](https://arxiv.org/abs/1811.00636) · [BadNets](https://arxiv.org/abs/1708.06733) · [Activation Clustering](https://arxiv.org/abs/1811.03728) · [Sleeper Agents](https://arxiv.org/abs/2401.05566)
+
+<a id="fiche-t6"></a>
+
+### T6 — Une décision tient-elle face à un contre-argument ?
+
+**Difficulté : 4/5** · Mots-clés : `complaisance`, `révision de croyances`, `contre-argument`, `audit`, `décision` · hybride CoursIA
+
+Dans un domaine régulé, une réponse ne vaut que si elle change pour une bonne raison et résiste à une mauvaise. Un modèle complaisant cède à « êtes-vous sûr ? » autant qu'à un fait nouveau. Le projet suit chaque décision comme un système de maintien de la vérité : la conclusion dépend de prémisses, et elle ne doit tomber que si l'une d'elles tombe. Il oppose des contre-arguments valides, des pressions sans contenu et des affirmations fausses.
+
+- **MVP** : Soixante cas de décision bornée (éligibilité, conformité) avec leurs règles ; pour chaque cas, trois relances : fait nouveau qui doit changer la réponse, pression sociale, fausse affirmation ; graphe de justification extrait de la réponse.
+- **Réussite** : Changements justifiés, changements injustifiés, refus de changer à tort ; accord entre le graphe extrait et les règles du cas.
+- **Extensions** : Rapport d'audit par décision ; débat entre deux modèles ; effet d'un raisonnement explicite avant réponse.
+- **Faisabilité** : API texte ou modèle local, cas synthétiques ; budget inférieur à 8 €. Plan B : réponses figées, analyse des graphes en local.
+
+**CoursIA** : [Maintien de la vérité et ICT](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/IIT/ICT-Series/ICT-Argumentation-TruthMaintenance-Python.ipynb) · [JTMS](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/SymbolicAI/ArgumentAnalysis/Argumentation-06-JTMS-Python.ipynb) · [Débat et sûreté](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/SymbolicAI/ArgumentAnalysis/Argumentation-11-Debate-Protocol-Safety-Python.ipynb)
+
+**Références** : [Towards Understanding Sycophancy in Language Models](https://arxiv.org/abs/2310.13548) · [Are You Sure? The FlipFlop Experiment](https://arxiv.org/abs/2311.08596) · [Discovering Language Model Behaviors with Model-Written Evaluations](https://arxiv.org/abs/2212.09251)
+
+<a id="fiche-t7"></a>
+
+### T7 — Agent d'entreprise : demander l'accord seulement pour l'irréversible
+
+**Difficulté : 4/5** · Mots-clés : `agents`, `réversibilité`, `validation humaine`, `bac à sable`, `sûreté` · hybride CoursIA
+
+Un agent qui demande confirmation à chaque geste n'est pas utilisé ; un agent qui n'en demande jamais finit par supprimer, payer ou envoyer à tort. Le projet classe chaque action par sa réversibilité (lecture, brouillon annulable, envoi, paiement, suppression) à partir de l'état du bac à sable, pas du texte du modèle, et ne réclame l'accord humain que pour ce qui ne se défait pas. Le verrou est le compromis entre dégâts évités et sollicitations de l'humain.
+
+- **MVP** : Bac à sable d'entreprise (courriels, fichiers, factures) avec annulation ; quarante tâches dont dix pièges ambigus ; trois politiques : jamais d'accord, accord systématique, accord sur l'irréversible.
+- **Réussite** : Actions irréversibles fautives exécutées, nombre de sollicitations humaines, tâches réussies ; tableau des trois politiques.
+- **Extensions** : Budget de risque par session ; explication présentée à l'humain ; journal d'audit rejouable.
+- **Faisabilité** : Outils simulés en local, API texte ou modèle local ; budget inférieur à 8 €. Plan B : traces d'agent figées, politique rejouée seule.
+
+**CoursIA** : [Function calling](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Texte/04_Function_Calling.ipynb) · [Surface d’attaque des outils MCP](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Security/Tooling/Tooling-MCP-Attack-Surface.ipynb) · [Red team au-delà de l’injection](https://github.com/jsboige/CoursIA/blob/main/MyIA.AI.Notebooks/GenAI/Security/RedTeam/RedTeam-Beyond-Injection.ipynb)
+
+**Références** : [ToolEmu: Identifying the Risks of LM Agents](https://arxiv.org/abs/2309.15817) · [τ-bench](https://arxiv.org/abs/2406.12045) · [NIST AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework)
